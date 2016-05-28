@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>複数のクラスをひとつの要素に適用する</title>
+<style>
+/**
+ * 共通する指定をまとめる
+ *
+ * 【注意】ただし、必ずまとめなければならない、ということはありません。
+ * ひとつの要素に対するスタイル指定があまりに細切れにされて
+ * ソースコード内に分散してしまうと、管理が面倒です。
+ * 読みやすさを第一に考えて、クラス名を付ける際も、共通の「danraku」に対して
+ * 個別指定は「danraku-red」とするとなど、関係が分かりやすい名前にしてください。
+ */
+.danraku {
+  border-style: solid;
+  border-width: 4px;
+  color: #fff;
+  margin-bottom: 30px;
+  width: 400px;
+}
+/**
+ * 枠線の色と背景色だけを個別に指定する
+ */
+.danraku-red {
+  background-color: #900;
+  border-color: #f00;
+}
+.danraku-green {
+  background-color: #090;
+  border-color: #0f0;
+}
+.danraku-blue {
+  background-color: #009;
+  border-color: #00f;
+}
+</style>
+</head>
+<body>
+<h1>複数のクラスをひとつの要素に適用する</h1>
+<p>
+  下記の3つの段落は幅と文字色と枠線が共通しているので、それらをひとつのクラスにまとめています。<br>
+  ただし配色は段落ごとに異なるので、それぞれのクラスを設けてそこで記述しています。<br>
+  共通と個別の2つのクラスに分けることで、コード量の削減と読みやすさを実現しています。
+</p>
+<div class="danraku danraku-red"><!-- スペースで区切ることで、複数のクラスを適用できる -->
+  <h3>タイトル1</h3>
+  <p>
+    あいうえお<br>
+    かきくけこ<br>
+    さしすせそ
+  </p>
+</div>
+<div class="danraku danraku-green"><!-- 共通指定と個別指定を、それぞれ適用させる -->
+  <h3>タイトル2</h3>
+  <p>
+    あいうえお<br>
+    かきくけこ<br>
+    さしすせそ
+  </p>
+</div>
+<div class="danraku danraku-blue">
+  <h3>タイトル3</h3>
+  <p>
+    あいうえお<br>
+    かきくけこ<br>
+    さしすせそ
+  </p>
+</div>
+</body>
+</html>
